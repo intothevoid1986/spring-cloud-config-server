@@ -1,0 +1,24 @@
+---
+
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/intothevoid1986/SpringCloudConfig
+          clone-on-start: true
+    bus:
+      enabled: true
+      id: my-config-server
+    stream:
+      kafka:
+        binder:
+          zkNodes: localhost:2181
+          brokers: localhost:29092
+#  security:
+#    user:
+#      name: root
+#      password: s3cr3t
+debug: false
